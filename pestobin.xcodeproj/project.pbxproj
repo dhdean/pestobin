@@ -10,6 +10,9 @@
 		65BE77301DF7BD14000044FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE772F1DF7BD14000044FB /* main.m */; };
 		65BE77381DF7BD63000044FB /* PastebinAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE77371DF7BD63000044FB /* PastebinAgent.m */; };
 		65BE77441DF7C2B6000044FB /* NSMutableURLRequest+PasteBin.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE77431DF7C2B6000044FB /* NSMutableURLRequest+PasteBin.m */; };
+		65BE7E741DF8B50300AA8F3F /* NSMutableURLRequest+DPaste.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE7E731DF8B50300AA8F3F /* NSMutableURLRequest+DPaste.m */; };
+		65BE7E771DF8B74700AA8F3F /* DPasteAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE7E761DF8B74700AA8F3F /* DPasteAgent.m */; };
+		65BE7E7A1DF8BCE000AA8F3F /* PasteAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE7E791DF8BCE000AA8F3F /* PasteAgent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +34,12 @@
 		65BE77371DF7BD63000044FB /* PastebinAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastebinAgent.m; sourceTree = "<group>"; };
 		65BE77421DF7C2B6000044FB /* NSMutableURLRequest+PasteBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+PasteBin.h"; sourceTree = "<group>"; };
 		65BE77431DF7C2B6000044FB /* NSMutableURLRequest+PasteBin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+PasteBin.m"; sourceTree = "<group>"; };
+		65BE7E721DF8B50300AA8F3F /* NSMutableURLRequest+DPaste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+DPaste.h"; sourceTree = "<group>"; };
+		65BE7E731DF8B50300AA8F3F /* NSMutableURLRequest+DPaste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+DPaste.m"; sourceTree = "<group>"; };
+		65BE7E751DF8B74700AA8F3F /* DPasteAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPasteAgent.h; sourceTree = "<group>"; };
+		65BE7E761DF8B74700AA8F3F /* DPasteAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPasteAgent.m; sourceTree = "<group>"; };
+		65BE7E781DF8BCE000AA8F3F /* PasteAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteAgent.h; sourceTree = "<group>"; };
+		65BE7E791DF8BCE000AA8F3F /* PasteAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteAgent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +77,12 @@
 				65BE77371DF7BD63000044FB /* PastebinAgent.m */,
 				65BE77421DF7C2B6000044FB /* NSMutableURLRequest+PasteBin.h */,
 				65BE77431DF7C2B6000044FB /* NSMutableURLRequest+PasteBin.m */,
+				65BE7E721DF8B50300AA8F3F /* NSMutableURLRequest+DPaste.h */,
+				65BE7E731DF8B50300AA8F3F /* NSMutableURLRequest+DPaste.m */,
+				65BE7E751DF8B74700AA8F3F /* DPasteAgent.h */,
+				65BE7E761DF8B74700AA8F3F /* DPasteAgent.m */,
+				65BE7E781DF8BCE000AA8F3F /* PasteAgent.h */,
+				65BE7E791DF8BCE000AA8F3F /* PasteAgent.m */,
 			);
 			path = pestobin;
 			sourceTree = SOURCE_ROOT;
@@ -130,7 +145,10 @@
 			files = (
 				65BE77381DF7BD63000044FB /* PastebinAgent.m in Sources */,
 				65BE77441DF7C2B6000044FB /* NSMutableURLRequest+PasteBin.m in Sources */,
+				65BE7E741DF8B50300AA8F3F /* NSMutableURLRequest+DPaste.m in Sources */,
+				65BE7E771DF8B74700AA8F3F /* DPasteAgent.m in Sources */,
 				65BE77301DF7BD14000044FB /* main.m in Sources */,
+				65BE7E7A1DF8BCE000AA8F3F /* PasteAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
