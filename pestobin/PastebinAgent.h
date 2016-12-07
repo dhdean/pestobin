@@ -4,15 +4,15 @@
 //  Created by Daniel Dean on 12/6/16.
 //
 
-#import <Foundation/Foundation.h>
+#import "PasteAgent.h"
 
-@interface PastebinAgent : NSObject
+@interface PastebinAgent : PasteAgent
 
 - (id)initWithAPIKey:(NSString*)key;
 
-- (void)paste:(NSString*)text handler:(void (^)(NSString* pasteUrl, NSError* error))handler;
+- (void)paste:(NSString*)text handler:(PasteAgentURLCallback)handler;
 
-- (void)paste:(NSString*)text key:(NSString*)key handler:(void (^)(NSString* pasteUrl, NSError* error))handler;
++ (void)paste:(NSString*)text key:(NSString*)key handler:(PasteAgentURLCallback)handler;
 
 
 @end
