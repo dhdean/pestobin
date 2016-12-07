@@ -1,2 +1,7 @@
 # pestobin
-Objective-C Pastebin command line tool and convenience classes
+Objective-C paste-site command line tool and convenience classes
+
+Currently supports:
+
+pastebin.com
+dpaste.com
