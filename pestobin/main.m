@@ -23,23 +23,33 @@ int main(int argc, const char * argv[]) {
         NSString* lazyEncoded = [str stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
         
         dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-        __block BOOL apiSuccess = false;
-        
-        void (^completionHandler)(NSString *pasteUrl, NSError *error) = ^(NSString *pasteUrl, NSError *error) {
-            if (error) {
-                NSLog(@"\n\n%@\n\n",error);
-            } else {
-                apiSuccess = true;
-                NSLog(@"\n\n%@\n\n",pasteUrl);
-            }
-            dispatch_semaphore_signal(sema);
-        };
         
         int random = ((long long)[[NSDate date] timeIntervalSince1970])%2;
         if (random == 0) {
-            [PastebinAgent paste:lazyEncoded key:PastebinDeveloperKey handler:completionHandler];
+            [PastebinAgent paste:lazyEncoded key:PastebinDeveloperKey handler:^(NSString *pasteUrl, NSError *error) {
+                if (error) {
+                    NSLog(@"\n\n%@\n\n",error);
+                } else {
+                    NSLog(@"\n\n%@\n\n",pasteUrl);
+                }
+                [PastebinAgent getOutputForPaste:pasteUrl handler:^(NSString * _Nullable pasteUrl, NSError * _Nullable error) {
+                    if (error) {
+                        NSLog(@"\n\n%@\n\n",error);
+                    } else {
+                        NSLog(@"\n\n%@\n\n",pasteUrl);
+                    }
+                    dispatch_semaphore_signal(sema);
+                }];
+            }];
         } else {
-            [DPasteAgent paste:lazyEncoded handler:completionHandler];
+            [DPasteAgent paste:lazyEncoded handler:^(NSString *pasteUrl, NSError *error) {
+                if (error) {
+                    NSLog(@"\n\n%@\n\n",error);
+                } else {
+                    NSLog(@"\n\n%@\n\n",pasteUrl);
+                }
+                dispatch_semaphore_signal(sema);
+            }];
         }
         dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
     }
