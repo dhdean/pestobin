@@ -43,4 +43,10 @@
 }
 
 
+//------------------------------------------------------------------------------
++ (void)getOutputForPaste:(NSString*)urlString handler:(void (^)(NSString* pasteUrl, NSError* error))handler {
+    NSMutableURLRequest* request = [NSMutableURLRequest createPastebinOutputWithURLString:urlString];
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:[self getCallback:handler]] resume];
+}
+
 @end

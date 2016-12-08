@@ -10,6 +10,14 @@ static NSString* PAErrDomain = @"com.dhdean.pasteagent";
 
 @implementation PasteAgent
 
+
+//------------------------------------------------------------------------------
++ (NSURLTaskCallback)getCallback:(void (^)(NSString* pasteUrl, NSError* error))handler {
+    return [PasteAgent getCallbackExpectingURLMatchingPrefix:nil handler:handler];
+}
+
+
+//------------------------------------------------------------------------------
 + (NSURLTaskCallback)getCallbackExpectingURLMatchingPrefix:(NSString*)prefix handler:(void (^)(NSString* pasteUrl, NSError* error))handler {
     return ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
@@ -29,7 +37,7 @@ static NSString* PAErrDomain = @"com.dhdean.pasteagent";
             return;
         }
         
-        if (![[responseText substringToIndex:prefix.length] isEqualToString:prefix]) {
+        if (prefix.length && ![[responseText substringToIndex:prefix.length] isEqualToString:prefix]) {
             // Response doesn't contain a URL.
             handler(nil, [NSError errorWithDomain:PAErrDomain code:945733 userInfo:@{@"responseText":responseText}]);
             return;

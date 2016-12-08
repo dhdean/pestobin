@@ -11,6 +11,8 @@ typedef void (^PasteAgentURLCallback)(NSString* _Nullable pasteUrl, NSError* _Nu
 
 @interface PasteAgent : NSObject
 
++ (NSURLTaskCallback _Nullable)getCallback:(PasteAgentURLCallback _Nullable)handler;
+
 + (NSURLTaskCallback _Nullable)getCallbackExpectingURLMatchingPrefix:(NSString* _Nullable)prefix handler:(PasteAgentURLCallback _Nullable)handler;
 
 @end

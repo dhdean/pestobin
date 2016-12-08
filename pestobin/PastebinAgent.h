@@ -14,5 +14,6 @@
 
 + (void)paste:(NSString*)text key:(NSString*)key handler:(PasteAgentURLCallback)handler;
 
++ (void)getOutputForPaste:(NSString*)urlString handler:(PasteAgentURLCallback)handler;
 
 @end

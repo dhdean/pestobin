@@ -10,4 +10,6 @@
 
 + (NSMutableURLRequest*)createPastebinPostWithText:(NSString*)text key:(NSString*)key;
 
++ (NSMutableURLRequest*)createPastebinOutputWithURLString:(NSString*)urlString;
+
 @end
